@@ -1,12 +1,13 @@
+import '../Components/Style.css';
 import { useState } from "react";
-
+ 
 const AddProducts = () => {
 
     const [product, setProduct] = useState({
         image: '',
         name: '',
         brand: '',
-        type: 'phone',
+        type: 'T-shirt',
         price: '',
         description: '',
         rating: '',
@@ -39,15 +40,17 @@ const AddProducts = () => {
   };
   return (
     <div>
-          <h1>Add Product</h1>
     
 
-{/* hjj */}
+
 
       <div className="hero min-h-screen bg-base-200">
    
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body" onSubmit={handleSubmit}>
+    <div className="card">
+    <h1 className="text-center yongSerif mt-5 mb-4">Add Product</h1>
+
+      <form className="card-body] space-y-4" onSubmit={handleSubmit}>
+        <div className='md:flex gap-5'>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Image</span>
@@ -61,6 +64,7 @@ const AddProducts = () => {
           <input className="input input-bordered" type="text" id="name" name="name" required value={product.name} onChange={handleChange} />
           
         </div>
+        </div>
 
         <div className="form-control">
           <label className="label">
@@ -69,20 +73,12 @@ const AddProducts = () => {
           <input type="text" className="input input-bordered" id="brand" name="brand" required value={product.brand} onChange={handleChange} />
         </div>
 
+        <div className='md:flex gap-5'>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Price</span>
           </label>
           <input className="input input-bordered" type="number" id="price" name="price" step="0.01" required value={product.price} onChange={handleChange} />
-        </div>
-        <div className="form-control">
-        <label htmlFor="type">Type:</label>
-        <select className="input input-bordered" id="type" name="type" value={product.type} onChange={handleChange}>
-          <option value="phone">Phone</option>
-          <option value="computer">Computer</option>
-          <option value="headphone">Headphone</option>
-          {/* Add more options as needed */}
-        </select>
         </div>
 
         <div className="form-control">
@@ -91,6 +87,21 @@ const AddProducts = () => {
           </label>
           <input className="input input-bordered"  type="number" id="rating" name="rating" step="0.1" required value={product.rating} onChange={handleChange} />
         </div>
+        </div>
+        <div className="form-control">
+        <label htmlFor="type">Type:</label>
+        <select className="input input-bordered" id="type" name="type" value={product.type} onChange={handleChange}>
+          <option value="T-shirt">T-Shirt</option>
+          <option value="Shoe">Shoe</option>
+          <option value="Swimsuit">Swimsuit</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Sweater">Sweater</option>
+           
+          {/* Add more options as needed */}
+        </select>
+        </div>
+
+        
 
         <div className="form-control">
           <label className="label">

@@ -10,10 +10,10 @@ import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Root from './Components/Root';
 import ErrorPage from './Pages/ErrorPage';
-import AddProduct from './Pages/AddProduct';
 import UpdateProduct from './Pages/UpdateProduct';
 import ShowProduct from './Pages/ShowProduct';
 import AddProducts from './Pages/AddProducts';
+import MyCart from './Pages/MyCart';
 
 
 const router = createBrowserRouter([
@@ -35,10 +35,10 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/product')
       },
       {
-        path : '/add',
-        element : <AddProduct/>
-
+        path: '/myCart',
+        element: <MyCart/>
       },
+     
       {
         path : '/add-products',
         element : <AddProducts/>
