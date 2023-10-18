@@ -10,7 +10,7 @@ const Navbar = () => {
 
     <li><NavLink to="/showProduct">Show Product</NavLink></li>
 
-    {/* <li><NavLink to='/login'>LogIn</NavLink></li> */}
+    <li><NavLink to='/add-products'>Add Products</NavLink></li>
     </>
   return (
     <div>
