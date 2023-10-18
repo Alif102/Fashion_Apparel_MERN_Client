@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
-  },
+  }, 
   "dependencies": {
     "daisyui": "^3.9.2",
     "localforage": "^1.10.0",
@@ -16,7 +16,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "sort-by": "^1.2.0"
+    "react-star-ratings": "^2.3.0",
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.32"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

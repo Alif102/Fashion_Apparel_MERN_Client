@@ -1,6 +1,6 @@
 import '../Components/Style.css';
 import { useState } from "react";
- 
+ import Swal from 'sweetalert2'
 const AddProducts = () => {
 
     const [product, setProduct] = useState({
@@ -14,8 +14,8 @@ const AddProducts = () => {
       });
     
       const handleChange = (e) => {
-        const { name, value } = e.target;
-        setProduct({ ...product, [name]: value });
+        const { name, value ,newRating } = e.target;
+        setProduct({ ...product, [name]: value, rating: newRating });
       };
     
       const handleSubmit = (e) => {
@@ -33,7 +33,15 @@ const AddProducts = () => {
     
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      console.log(data);
+      if(data.insertedId){
+        Swal.fire({
+          title: 'Success!',
+          text: 'Product Added Successfully',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+      }
     })
     // You can handle form submission logic here, e.g., sending data to the server.
     console.log('Form data submitted:', product);
@@ -85,6 +93,13 @@ const AddProducts = () => {
           <label className="label">
             <span className="label-text">Raiting :</span>
           </label>
+          {/* <StarRatings
+          rating={product.rating}
+          starRatedColor="gold"
+          changeRating={handleChange}
+          numberOfStars={5}
+          name="rating"
+        /> */}
           <input className="input input-bordered"  type="number" id="rating" name="rating" step="0.1" required value={product.rating} onChange={handleChange} />
         </div>
         </div>
