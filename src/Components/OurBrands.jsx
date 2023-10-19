@@ -1,85 +1,62 @@
+/* eslint-disable react/prop-types */
 
-const OurBrands = () => {
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+
+// import OurBrandsCards from "./OurBrandsCards"
+
+const OurBrands = ({brands}) => {
+    const {name, _id} = brands;
+    const [data, setData] = useState([]);
+    // const { _id} = brand;
+    console.log(_id)
+
+    useEffect(() => {
+        fetch('http://localhost:5000/product') // Replace 'data.json' with the actual path to your JSON file.
+          .then((response) => response.json())
+          .then((data) => {
+            setData(data);
+        
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+    
+
+
     return (
         <div>
-                        <h2 className="text-center text-2xl">Our Brands</h2>
+           
+            
+            <h2 className="text-center text-2xl">Our Brands {brands.name}</h2>
+            {
+                data.map(item => <div key={item._id}>
+                    <Link to={`/details/${item._id}`}>
+                     name {item.name}
+                     </Link>
+                     </div>)
+            }
+            <h2>{name}</h2>
 
-        
-        <div className="grid mt-8 max-w-[1000px] mx-auto md:grid-cols-3 gap-5">
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src=" https://thinkmarketingmagazine.com/wp-content/uploads/2012/08/Adidas-logo-and-brand-transformations-story.jpeg
-" alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">Adidas</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
+      
 
+      
 
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src=" https://textiletoday.com.bd/storage/uploads/2023/8/Zara-owner-Inditex-to-stop-buying-garments-from-Myanmar-16910371552878.jpg
-" alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">ZARA</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
+            <div>
+    
+    
+    
+  </div>
+{/*         
+         <div className="grid mt-8 max-w-[1000px] mx-auto md:grid-cols-3 gap-5">
+           
 
+            
 
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src=" https://photos5.appleinsider.com/gallery/28654-45013-Gucci-store-in-Kuala-Lumpur,-Malaysia-xl.jpg
-" alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">GUCCI</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src="https://www.urbankissed.com/images/Urbankissed/Blog/Rated/FastFashion/fast_fashion_slow_end-1.jpg " alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">H&M</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src=" https://previews.123rf.com/images/multitel/multitel2005/multitel200500185/147686791-levi-s-store-izmir-founded-in-1853-levi-strauss-is-an-american-clothing-company-known-worldwide-for.jpg" alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">LEVIS</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="card w-[280px] bg-base-100 shadow-xl image-full">
-                <figure><img src="  https://sneakernews.com/wp-content/uploads/2021/08/Nike-Seoul-Store-Opening-6.jpg" alt="brand-img" /></figure>
-                <div className="card-body">
-             
-                    <div className="card-actions justify-end">
-                    <h2 className="card-title">NIKE</h2>
-                        {/* <button className="btn btn-primary">Buy Now</button> */}
-                    </div>
-                </div>
-            </div>
-        </div>
+          
+        </div> */}
         </div>
     )
 }

@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "title" : "Adidas",
+        "image" : "https://thinkmarketingmagazine.com/wp-content/uploads/2012/08/Adidas-logo-and-brand-transformations-story.jpeg"
+    },
+    {
+        "id" : 2,
+        "title" : "ZARA",
+        "image" : " https://textiletoday.com.bd/storage/uploads/2023/8/Zara-owner-Inditex-to-stop-buying-garments-from-Myanmar-16910371552878.jpg        "
+    },
+    {
+        "id" : 3,
+        "title" : "GUCCI",
+        "image" : "https://photos5.appleinsider.com/gallery/28654-45013-Gucci-store-in-Kuala-Lumpur,-Malaysia-xl.jpg"
+    },
+    {
+        "id" : 4,
+        "title" : "H&M",
+        "image" : "https://www.urbankissed.com/images/Urbankissed/Blog/Rated/FastFashion/fast_fashion_slow_end-1.jpg "
+    },
+    {
+        "id" : 5,
+        "title" : "LEVIS",
+        "image" : "https://previews.123rf.com/images/multitel/multitel2005/multitel200500185/147686791-levi-s-store-izmir-founded-in-1853-levi-strauss-is-an-american-clothing-company-known-worldwide-for.jpg"
+    },
+    {
+        "id" : 6,
+        "title" : "NIKE",
+        "image" : "https://sneakernews.com/wp-content/uploads/2021/08/Nike-Seoul-Store-Opening-6.jpg"
+    }
+]

@@ -1,14 +1,15 @@
-import Banner from "../Components/Banner"
+// // import TopPicks from "../Components/TopPicks"
 import OurBrands from "../Components/OurBrands"
-import TopPicks from "../Components/TopPicks"
+import { useLoaderData } from "react-router-dom"
 
 
 const Home = () => {
+  const brands = useLoaderData()
   return (
     <div>
-      <Banner/>
-      <OurBrands/>
-      <TopPicks/>
+      {/* <Banner/> */}
+      <OurBrands brands={brands} ></OurBrands>
+      {/* <TopPicks/> */}
       
     </div>
   )
