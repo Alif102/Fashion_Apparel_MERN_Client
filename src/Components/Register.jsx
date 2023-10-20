@@ -43,10 +43,6 @@ const Register = () => {
 
     createUser(email,password,name,photo)
   
-    // .then(res => {
-    //   console.log(res.user);
-    //   setSuccess('User Created Sucessfully')
-    // })
 
     .then(res => {
       console.log(res.user)

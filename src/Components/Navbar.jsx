@@ -1,15 +1,16 @@
 import { Link, NavLink } from "react-router-dom"
 import UseAuth from "../Hooks/UseAuth";
+// import UseAuth from "../Hooks/UseAuth";
 
 
 const Navbar = () => {
   const {user , LogOut} = UseAuth();
     const navLinks =  <>
     <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/update">Update Product</NavLink></li>
+    {/* <li><NavLink to="/update">Update Product</NavLink></li> */}
     <li><NavLink to="/myCart">My Cart</NavLink></li>
 
-    <li><NavLink to="/showProduct">Show Product</NavLink></li>
+    {/* <li><NavLink to="/showProduct">Show Product</NavLink></li> */}
 
     <li><NavLink to='/add-products'>Add Products</NavLink></li>
     </>

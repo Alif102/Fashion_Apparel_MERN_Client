@@ -1,4 +1,6 @@
-import UseAuth from "./Hooks/UseAuth"
+// import UseAuth from "./Hooks/UseAuth"
+
+import UseAuth from "../Hooks/UseAuth";
 
 const SocialLogin = () => {
 

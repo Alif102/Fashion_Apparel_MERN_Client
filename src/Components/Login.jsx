@@ -1,8 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
- import UseAuth from "./Hooks/UseAuth"
 import SocialLogin from "./SocialLogin";
+import UseAuth from "../Hooks/UseAuth";
 
-
+ 
 const Login = () => {
   const {signIn} = UseAuth();
   const location = useLocation();
