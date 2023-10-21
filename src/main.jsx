@@ -16,6 +16,7 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import AuthProvider from './Provider/AuthProvider';
 import IndividualProduct from './Pages/IndividualProduct';
+import ErrorPage from './Pages/ErrorPage';
 // import OurBrands from './Components/OurBrands';
 
 
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/> ,
-    // errorElement : <ErrorPage/>,
+    errorElement : <ErrorPage/>,
 
     children : [
       {
@@ -48,8 +49,9 @@ const router = createBrowserRouter([
         path: '/detail/:_id',
         element: <IndividualProduct></IndividualProduct>,
         loader: ({params}) => fetch(`http://localhost:5000/products/${params._id}`)
-
-    },
+      
+      },
+    
 
       
       {

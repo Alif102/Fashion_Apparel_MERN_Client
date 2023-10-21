@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 const ErrorPage = () => {
+
   return (
     <div className="text-center mt-11">
       {/* <div>
@@ -14,4 +15,6 @@ const ErrorPage = () => {
 }
 
 export default ErrorPage
+
+
 
