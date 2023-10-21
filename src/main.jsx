@@ -15,6 +15,7 @@ import ProductDetails from './Pages/ProductDetails';
 import Register from './Components/Register';
 import Login from './Components/Login';
 import AuthProvider from './Provider/AuthProvider';
+import IndividualProduct from './Pages/IndividualProduct';
 // import OurBrands from './Components/OurBrands';
 
 
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
         element : <ProductDetails/>,
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.brand}`)
       },
+      {
+        path: '/detail/:_id',
+        element: <IndividualProduct></IndividualProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params._id}`)
+
+    },
 
       
       {

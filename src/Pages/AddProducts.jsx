@@ -1,6 +1,12 @@
 import '../Components/Style.css';
+import '../Pages/Pages.css'
 import { useState } from "react";
  import Swal from 'sweetalert2'
+//  import { Rating } from '@smastrom/react-rating'
+
+// import '@smastrom/react-rating/style.css'
+//  import StarRatings from 'react-simple-star-rating'
+  // import StarRatings from 'react-star-ratings'
 const AddProducts = () => {
 
     const [product, setProduct] = useState({
@@ -10,13 +16,17 @@ const AddProducts = () => {
         type: 'T-shirt',
         price: '',
         description: '',
-        rating: '',
+        rating : '1'
+      
       });
     
       const handleChange = (e) => {
-        const { name, value ,newRating } = e.target;
-        setProduct({ ...product, [name]: value, rating: newRating });
+        const { name, value  } = e.target;
+        setProduct({ ...product, [name]: value });
       };
+      // const handleRatingChange = (newRating) => {
+      //   setProduct({ ...product, rating: newRating });
+      // };
     
       const handleSubmit = (e) => {
         e.preventDefault();
@@ -93,6 +103,24 @@ const AddProducts = () => {
           <label className="label">
             <span className="label-text">Raiting :</span>
           </label>
+          {/* <Rating
+      style={{ maxWidth: 120 }}
+      value={product.rating}
+      changeRating={handleRatingChange}
+
+      readOnly
+    /> */}
+          {/* <StarRatings
+            rating={product.rating}
+            starRatedColor="gold"
+            changeRating={handleRatingChange}
+            numberOfStars={5}
+          name='rating'
+            
+            
+          /> */}
+
+          
           {/* <StarRatings
           rating={product.rating}
           starRatedColor="gold"
