@@ -13,7 +13,7 @@ const OurBrands = ({brands}) => {
     console.log(_id)
 
     useEffect(() => {
-        fetch('http://localhost:5000/product') // Replace 'data.json' with the actual path to your JSON file.
+        fetch('https://coffe-server-backend.vercel.app/product') // Replace 'data.json' with the actual path to your JSON file.
           .then((response) => response.json())
           .then((data) => {
             setData(data);

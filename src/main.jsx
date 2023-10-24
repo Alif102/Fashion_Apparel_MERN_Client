@@ -7,7 +7,6 @@ import {
 import './index.css'
 import Home from './Pages/Home';
 import Root from './Components/Root';
-import UpdateProduct from './Pages/UpdateProduct';
 import ShowProduct from './Pages/ShowProduct';
 import AddProducts from './Pages/AddProducts';
 import MyCart from './Pages/MyCart';
@@ -17,7 +16,8 @@ import Login from './Components/Login';
 import AuthProvider from './Provider/AuthProvider';
 import IndividualProduct from './Pages/IndividualProduct';
 import ErrorPage from './Pages/ErrorPage';
-// import OurBrands from './Components/OurBrands';
+// import Update from './Pages/Update';
+import UpdateProducts from './Pages/UpdateProduct';
 
 
 const router = createBrowserRouter([
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path : '/',
         element : <Home/>,
-        // loader: () => fetch('http://localhost:5000/product')
+
 
       },
     
@@ -38,25 +38,33 @@ const router = createBrowserRouter([
       {
         path: '/showProduct',
         element: <ShowProduct/>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://coffe-server-backend.vercel.app/product')
       },
       {
         path: '/details/:brand',
         element : <ProductDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.brand}`)
+        loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/product/${params.brand}`)
       },
+     
       {
         path: '/detail/:_id',
         element: <IndividualProduct></IndividualProduct>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params._id}`)
+        loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/products/${params._id}`)
+      
+      },
+      {
+        path: '/updateProduct/:_id',
+        element: <UpdateProducts/>,
+        loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/products/${params._id}`)
       
       },
     
 
       
       {
-        path: '/myCart',
-        element: <MyCart/> 
+        path: '/myCart/:_id',
+        element: <MyCart/> ,
+        loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/products/${params._id}`)
       },
      
       {
@@ -65,11 +73,7 @@ const router = createBrowserRouter([
         
 
       },
-      {
-        path : '/update',
-        element : <UpdateProduct/>
-
-      },
+      
       {
         path : '/register',
         element : <Register/>

@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom"
 import UseAuth from "../Hooks/UseAuth";
 // import UseAuth from "../Hooks/UseAuth";
 
 
 const Navbar = () => {
+
   const {user , LogOut} = UseAuth();
     const navLinks =  <>
     <li><NavLink to="/">Home</NavLink></li>
@@ -15,8 +17,8 @@ const Navbar = () => {
     <li><NavLink to='/add-products'>Add Products</NavLink></li>
     </>
   return (
-    <div>
-        <div className="navbar bg-base-100">
+    <div data-theme="dark">
+        <div className="navbar bg-base-100" data-theme="light">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

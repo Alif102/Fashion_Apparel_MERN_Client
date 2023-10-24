@@ -1,11 +1,17 @@
 /* eslint-disable react/prop-types */
   import { Link } from 'react-router-dom'
-import StarRatings from 'react-star-ratings'
+  // import StarRatings from 'react-star-ratings'
 
 
-const ProductDetail = ({detail}) => {
-  const {_id,name,brand,type,image,description,price,rating} = detail
+const ProductDetail = ({detail }) => {
+  const {_id,name,brand,type,image,description,price} = detail;
 
+ 
+     // const handleRatingChange = (newRating) => {
+      //   setProduct({ ...product, rating: newRating });
+      // };
+    
+  
 
 
   
@@ -25,18 +31,23 @@ const ProductDetail = ({detail}) => {
   
   <div className="flex justify-between mt-3 mb-3">
   <h2 className="font-bold text-purple-500">Price : ${price}</h2>
-   <StarRatings
+  {/* <StarRatings
             rating={rating}
             starRatedColor="gold"
             numberOfStars={5}
             name='rating'
             
             
-          />
+          /> */}
+
+         {/* <h2>Ratings : <span className='text-red-500 font-bold'>{rating}</span></h2> */}
+           
          
   </div>
   <div className="card-actions gap-6 justify-center">
+  <Link to={`/updateProduct/${_id}`}> 
       <div className="btn btn-accent">Update</div> 
+      </Link>
       <Link to={`/detail/${_id}`}>
       <div className="btn btn-neutral">Details</div>
       </Link>
