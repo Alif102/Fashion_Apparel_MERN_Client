@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     
      
       {
-        path: '/showProduct',
+        path: '/showProductt',
         element: <ShowProduct/>,
         loader: () => fetch('https://coffe-server-backend.vercel.app/product')
       },
@@ -87,7 +87,6 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register/>
-
       },
       
       {
