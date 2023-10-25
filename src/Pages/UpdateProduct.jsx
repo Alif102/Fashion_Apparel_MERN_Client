@@ -3,13 +3,15 @@ import { useLoaderData } from 'react-router-dom';
 import '../Components/Style.css';
 import '../Pages/Pages.css'
 import Swal from 'sweetalert2';
-// import { useState } from "react";
-//  import Swal from 'sweetalert2'
+
+
 
 const UpdateProducts = () => {
-
+  
     const details = useLoaderData()
-  const {_id,name,brand,type,image,description,price} = details
+  const {_id,name,brand,type,image,description,price,rating} = details;
+
+  
 
 
  
@@ -27,15 +29,15 @@ const UpdateProducts = () => {
         const description = form.description.value;
         const image = form.image.value;
         const price = form.price.value;
-        // const rating = form.rating.value;
+        const rating = form.rating.value;
 
-        const product = { name, brand, type, description, image, price }
+        const product = { name, brand, type, description, image, price, rating }
 
 
         console.log(product)
         // http://localhost:5173/updateProduct/6530df0ebada6250c6ab521d
 
-        fetch(`http://localhost:5000/productss/${_id}`,{
+        fetch(`https://coffe-server-backend.vercel.app/productss/${_id}`,{
       method: 'PUT',headers:{
         'content-type': 'application/json'
       },
@@ -55,19 +57,10 @@ const UpdateProducts = () => {
   .catch(err=>console.error(err))
 
 
-
-
-  
-
-    
-    
   };
   return (
     <div>
-    
-
-
-
+ 
       <div className="hero min-h-screen bg-base-200">
    
     <div className="card">
@@ -105,24 +98,19 @@ const UpdateProducts = () => {
           <input className="input input-bordered" type="number" id="price" defaultValue={price} name="price" accept="image/*" required />
         </div>
 
-        {/* <div className="form-control">
+         <div className="form-control">
           <label className="label">
             <span className="label-text">Raiting :</span>
           </label>
+         
 
-          <select 
-          className="input input-bordered" name="rating" type="number"  id="rating" defaultValue={rating}  step="0.1"            >
-            <option value={1}> ⭐</option>
-            <option value={2}>⭐ ⭐ </option>
-            <option value={3}>⭐ ⭐ ⭐</option>
-            <option value={4}>⭐ ⭐ ⭐ ⭐</option>
-            <option value={5}>⭐ ⭐ ⭐ ⭐ ⭐</option>
-          </select> */}
+
 
           
          
-          {/* <input className="input input-bordered" name="rating" type="number"  id="rating" defaultValue={rating}  step="0.1"    /> */}
-        {/* </div> */}
+          <input className="input input-bordered" name="rating" type="number"  id="rating" defaultValue={rating}  step="0.1"    />
+       
+        </div> 
         </div>
         <div className="form-control">
         <label htmlFor="type">Type:</label>
@@ -160,10 +148,3 @@ const UpdateProducts = () => {
 export default UpdateProducts
 
 
-// import { useState } from "react";
-// import { useLoaderData } from "react-router-dom"
-// import Swal from "sweetalert2";
-
-// const UpdateProduct = () => {
-//   const details = useLoaderData()
-//   const {name,brand,type,image,description,price,rating} = details

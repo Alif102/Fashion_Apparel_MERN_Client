@@ -3,6 +3,9 @@ import '../Components/Style.css';
 import '../Pages/Pages.css'
 import { useState } from "react";
  import Swal from 'sweetalert2'
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesome icon component
+import { faStar } from '@fortawesome/free-solid-svg-icons'; // Import the star icon
+
  
 
 const AddProducts = () => {
@@ -15,6 +18,7 @@ const AddProducts = () => {
         type: 'T-shirt',
         price: '',
         description: '',
+        rating: 1
        
         
       
@@ -99,19 +103,32 @@ const AddProducts = () => {
           <input className="input input-bordered" type="number" id="price" name="price" step="0.01" required value={product.price} onChange={handleChange} />
         </div>
 
-        {/* <div className="form-control">
+        <div className="form-control">
           <label className="label">
             <span className="label-text">Raiting :</span>
-          </label> */}
-          {/* <select
-          className="input input-bordered text-3xl text-red-400 font-bold" id="rating"
-           name="rating" value={product.rating} onChange={handleChange}>
-            <option value={1}> ⭐</option>
-            <option value={2}>⭐ ⭐ </option>
-            <option value={3}>⭐ ⭐ ⭐</option>
-            <option value={4}>⭐ ⭐ ⭐ ⭐</option>
-            <option value={5}>⭐ ⭐ ⭐ ⭐ ⭐</option>
-          </select> */}
+          </label>
+          <div className="flex">
+            {[1, 2, 3, 4, 5].map((value) => (
+              <label key={value} className="text-yellow-400 cursor-pointer">
+                <input
+                  type="radio"
+                  id={`rating${value}`}
+                  name="rating"
+                  value={value}
+                  className="sr-only"
+                  onChange={handleChange}
+                />
+                <FontAwesomeIcon
+                  icon={faStar}
+                  className={`text-xl ${
+                    value <= product.rating ? 'text-yellow-500' : 'text-gray-300'
+                  }`}
+                />
+              </label>
+              ))}
+              </div>
+          </div>
+         
           
           
           

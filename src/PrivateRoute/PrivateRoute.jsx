@@ -12,7 +12,7 @@ const PrivateRoute = ({children}) => {
         if (loading) 
         {
             return <h2 className="text-4xl text-center mt-10">Loading .......</h2>
-            
+             
         }
     
         if (user) 

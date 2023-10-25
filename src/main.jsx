@@ -18,6 +18,7 @@ import IndividualProduct from './Pages/IndividualProduct';
 import ErrorPage from './Pages/ErrorPage';
 // import Update from './Pages/Update';
 import UpdateProducts from './Pages/UpdateProduct';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -42,9 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:brand',
-        element : <ProductDetails/>,
+        element : <PrivateRoute>
+          <ProductDetails/>
+        </PrivateRoute>,
         loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/product/${params.brand}`)
       },
+      
      
       {
         path: '/detail/:_id',
@@ -54,7 +58,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateProduct/:_id',
-        element: <UpdateProducts/>,
+        element: <PrivateRoute>
+          <UpdateProducts/>
+        </PrivateRoute>,
         loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/products/${params._id}`)
       
       },
@@ -63,13 +69,17 @@ const router = createBrowserRouter([
       
       {
         path: '/myCart/:_id',
-        element: <MyCart/> ,
+        element: <PrivateRoute>
+          <MyCart/>
+        </PrivateRoute> ,
         loader: ({params}) => fetch(`https://coffe-server-backend.vercel.app/products/${params._id}`)
       },
      
       {
         path : '/add-products',
-        element : <AddProducts/>
+        element : <PrivateRoute>
+          <AddProducts/>
+        </PrivateRoute>
         
 
       },

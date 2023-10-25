@@ -1,18 +1,20 @@
-// // import TopPicks from "../Components/TopPicks"
+import TopPicks from "../Components/TopPicks"
+import Feature from "../Components/Features"
 // import Brands from "../Brands/Brands"
-// import Banner from "../Components/Banner"
+import Banner from "../Components/Banner"
 import Brands from "../Our/Brands"
+import Footer from "../Components/Footer"
 
 
 const Home = () => {
   return (
     <div>
-      {/* <Banner/> */}
+      <Banner/>
       {/* <Brands /> */}
       <Brands />
-      {/* <OurBrands brands={brands} ></OurBrands> */}
-      {/* <TopPicks/> */}
-      {/* brandsData={brandsData} */}
+      <Feature/>
+        <TopPicks/>
+        <Footer/>
       
     </div>
   )

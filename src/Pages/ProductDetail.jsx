@@ -4,7 +4,7 @@
 
 
 const ProductDetail = ({detail }) => {
-  const {_id,name,brand,type,image,description,price} = detail;
+  const {_id,name,brand,type,image,description,price,rating} = detail;
 
  
      // const handleRatingChange = (newRating) => {
@@ -40,7 +40,7 @@ const ProductDetail = ({detail }) => {
             
           /> */}
 
-         {/* <h2>Ratings : <span className='text-red-500 font-bold'>{rating}</span></h2> */}
+         <h2>Ratings : <span className='text-red-500 font-bold'>{rating}</span></h2>
            
          
   </div>

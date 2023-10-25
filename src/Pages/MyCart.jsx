@@ -2,13 +2,14 @@
 /* eslint-disable react/prop-types */
 
 import { useLoaderData } from "react-router-dom"
+import MyCartCard from "./MyCartCard";
 // import MyCartCard from "./MyCartCard"
 
 
 const MyCart = () => {
   const cartData = useLoaderData()
   console.log(cartData)
-  const {name, price} = cartData;
+  // const {name, price} = cartData;
     
 
     // console.log(details)
@@ -24,7 +25,7 @@ const MyCart = () => {
 
       } */}
        {/* <MyCartCard cartData ={cartData}></MyCartCard> */}
-       <div className="grid md:max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-3 gap-3 ">
+       {/* <div className="grid md:max-w-[1000px] mx-auto grid-cols-1 md:grid-cols-3 gap-3 "> */}
         {/* {
 
          cartData.map(cart => <MyCartCard 
@@ -33,11 +34,12 @@ const MyCart = () => {
           </MyCartCard>) 
 
         } */}
-        <h2>{cartData.length}</h2>
+        {/* <h2>{cartData.length}</h2>
         <h2>{name}</h2>
-        <h2>{price}</h2>
+        <h2>{price}</h2> */}
 
-      </div>
+      {/* </div> */}
+      <MyCartCard cartData={cartData}></MyCartCard>
        
 
     </div>
