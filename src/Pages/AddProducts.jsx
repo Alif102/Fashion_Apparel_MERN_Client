@@ -40,11 +40,8 @@ const AddProducts = () => {
         'content-type': 'application/json'
       }, 
       body : 
-        JSON.stringify(product)
-      
+        JSON.stringify(product)  
     })
-
-    
     .then(res => res.json())
     .then(data => {
       console.log(data);

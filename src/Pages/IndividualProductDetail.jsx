@@ -1,9 +1,40 @@
 /* eslint-disable react/prop-types */
 
-import { Link } from "react-router-dom"
+import Swal from "sweetalert2";
+import UseAuth from "../Hooks/UseAuth";
 
 const IndividualProductDetail = ({details}) => {
-    const {_id,name,brand,type,image,description,price,rating} = details
+  let {user} = UseAuth();
+ 
+    const {name,brand,type,image,description,price,rating} = details
+
+    const handleCart = () => {
+      // e.preventDefault();
+      console.log(details)
+
+      fetch('https://coffe-server-backend.vercel.app/carts', {
+    method: 'POST',
+    headers:{
+      'content-type': 'application/json'
+    }, 
+    body : JSON.stringify({details, email: user.email })  
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if(data.insertedId){
+       Swal.fire({
+        title: 'Success!',
+        text: 'Product Added Successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+    }
+  })
+  // You can handle form submission logic here, e.g., sending data to the server.
+  console.log('Form data submitted:', details);
+};
+
 
   return (
     <div className="w-[800px] mx-auto">
@@ -32,11 +63,12 @@ const IndividualProductDetail = ({details}) => {
             
           /> */}
     <div className="card-actions justify-center">
-    <Link to={`/myCart/${_id}`}>
+    {/* <Link to={`/product/${_id}`}>
     <button className="btn btn-primary">Add to Cart</button>
+</Link> */}
 
+    <button onClick={handleCart} className="btn btn-primary">Add to Cart</button>
 
-    </Link>
     </div>
   </div>
 </div>

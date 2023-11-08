@@ -1,7 +1,6 @@
-import TopPicks from "../Components/TopPicks"
-import Feature from "../Components/Features"
-// import Brands from "../Brands/Brands"
-import Banner from "../Components/Banner"
+// import Feature from "../Components/Features"
+// import TopPicks from "../Components/TopPicks"
+// import Banner from "../Components/Banner"
 import Brands from "../Our/Brands"
 import Footer from "../Components/Footer"
 
@@ -9,11 +8,12 @@ import Footer from "../Components/Footer"
 const Home = () => {
   return (
     <div>
-      <Banner/>
-      {/* <Brands /> */}
+      {/* <Banner/> */}
       <Brands />
-      <Feature/>
-        <TopPicks/>
+        {/* <TopPicks/>
+              <Feature/> */}
+
+        
         <Footer/>
       
     </div>

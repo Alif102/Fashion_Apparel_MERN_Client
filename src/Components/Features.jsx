@@ -32,7 +32,7 @@ const Features = () => {
     
       
     return (
-        <section className=' max-w-[1150px] mx-auto' >
+        <section className=' mt-10 mb-20 max-w-[1150px] mx-auto' >
 
             <h1 className="text-4xl text-[#151875] font-bold my-10 text-center">What GIORGIO ARMANI Offer!</h1>
 
